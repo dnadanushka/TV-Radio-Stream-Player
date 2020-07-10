@@ -1,5 +1,5 @@
 # TV-Radio-Stream-Player
-Android java youtube TV live stream player and a radio player from url
+Android java youtube TV live stream player and an exoplayer radio player from url
 
 ## TV Player
 - TV feed is taken from youtube.
@@ -14,4 +14,7 @@ Dependancies used
 - com.github.wseemann:FFmpegMediaMetadataRetriever
 - Exoplayer
 
+## Configurations
+
+### AndroidManifest.xml
 
