@@ -121,6 +121,7 @@ public class RadioPlayer extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             nowPlaying.setText(nowPlayingData);
+            RadioPlayer.this.play();
         }
     }
 

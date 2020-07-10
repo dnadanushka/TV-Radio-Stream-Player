@@ -29,7 +29,8 @@ public class TVPlayer extends YouTubeBaseActivity implements YouTubePlayer.OnIni
     @Override
     public void onInitializationSuccess(Provider provider, YouTubePlayer player, boolean wasRestored) {
         if (!wasRestored) {
-            player.cueVideo(WAHARAKA_YOUTUBE_TV_YOUTUBE_CODE);
+            player.loadVideo(WAHARAKA_YOUTUBE_TV_YOUTUBE_CODE);
+
         }
     }
 
