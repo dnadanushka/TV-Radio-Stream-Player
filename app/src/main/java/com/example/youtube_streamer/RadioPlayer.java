@@ -2,6 +2,7 @@ package com.example.youtube_streamer;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -30,7 +31,7 @@ import wseemann.media.FFmpegMediaMetadataRetriever;
 import static com.example.youtube_streamer.Config.STREAMING_URL;
 
 
-public class RadioPlayer extends AppCompatActivity {
+public class RadioPlayer extends Activity {
 
     private TextView nowPlaying;
     private ImageView playStop;

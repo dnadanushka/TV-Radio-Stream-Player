@@ -4,36 +4,82 @@
     android:id="@+id/lau"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/btn_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="@string/waharaka_tv"
-        app:layout_constraintBottom_toTopOf="@+id/btn_radio"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:src="@drawable/img_logo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.824" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_radio"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_tv"
-        android:layout_alignEnd="@+id/btn_tv"
-        android:layout_alignRight="@+id/btn_tv"
-        android:layout_marginBottom="288dp"
-        android:text="@string/waharaka_radio"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="@string/waharaka_radio" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_tv"
+            android:layout_width="150dp"
+            android:layout_height="300dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/coner_button"
+            android:text="@string/waharaka_tv"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_radio"
+            android:layout_width="150dp"
+            android:layout_height="300dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/coner_button"
+            android:text="@string/waharaka_radio"
+            android:textColor="#FFFFFF"
+            tools:text="@string/waharaka_radio" />
+
+        <Button
+            android:id="@+id/btn_deshana"
+            android:layout_width="150dp"
+            android:layout_height="300dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/coner_button"
+            android:text="Deshana"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_karmasthana"
+            android:layout_width="150dp"
+            android:layout_height="300dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/coner_button"
+            android:text="Karmasthana"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_library"
+            android:layout_width="150dp"
+            android:layout_height="300dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/coner_button"
+            android:text="Library"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

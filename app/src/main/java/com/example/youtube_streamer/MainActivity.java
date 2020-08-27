@@ -1,6 +1,7 @@
 package com.example.youtube_streamer;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,10 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private Button buttonTV;
     private Button buttonRadio;
+    private Button buttonDeshana;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         buttonTV = findViewById(R.id.btn_tv);
         buttonRadio = findViewById(R.id.btn_radio);
+        buttonDeshana = findViewById(R.id.btn_deshana);
 
         buttonTV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 Intent intent = new Intent(MainActivity.this, RadioPlayer.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonDeshana.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(MainActivity.this, DeshanaActivity.class);
                 startActivity(intent);
             }
         });
