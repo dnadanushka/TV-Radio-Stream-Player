@@ -9,11 +9,13 @@ public class WordModel implements SortedListAdapter.ViewModel {
     private final long mId;
     private final int mRank;
     private final String mWord;
+    private final String mFilename;
 
-    public WordModel(long id, int rank, String word) {
+    public WordModel(long id, int rank, String word,String filename) {
         mId = id;
         mRank = rank;
         mWord = word;
+        mFilename = filename;
     }
 
     public long getId() {
@@ -27,6 +29,8 @@ public class WordModel implements SortedListAdapter.ViewModel {
     public String getWord() {
         return mWord;
     }
+
+    public String getFilename() {return mFilename;}
 
     @Override
     public <T> boolean isSameModelAs(@NonNull T item) {
