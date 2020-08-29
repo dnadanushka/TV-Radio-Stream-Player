@@ -1,5 +1,6 @@
 package com.example.youtube_streamer;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,9 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(),"click on item: "+myListData.getDescription(),Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(holder.relativeLayout.getContext(), Mp3PlayerActivity.class);
+                holder.relativeLayout.getContext().startActivity(intent);
+
             }
         });
     }

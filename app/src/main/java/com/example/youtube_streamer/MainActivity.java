@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
     private Button buttonTV;
     private Button buttonRadio;
     private Button buttonDeshana;
+    private Button buttonKarmasthana;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends Activity {
         buttonTV = findViewById(R.id.btn_tv);
         buttonRadio = findViewById(R.id.btn_radio);
         buttonDeshana = findViewById(R.id.btn_deshana);
+        buttonKarmasthana = findViewById(R.id.btn_karmasthana);
 
         buttonTV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +55,13 @@ public class MainActivity extends Activity {
             }
         });
 
+        buttonKarmasthana.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, KarmasthanaActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

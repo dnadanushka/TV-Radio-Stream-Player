@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.wrdlbrnft:modular-adapter:0.3.0.22@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/241571c36676380a708edbf1e9f19842/jetified-modular-adapter-0.3.0.22/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/241571c36676380a708edbf1e9f19842/jetified-modular-adapter-0.3.0.22/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.wrdlbrnft/modular-adapter/0.3.0.22/7682eb6fcb6bfa5a0d7e1d9961c525f05ecfb148/modular-adapter-0.3.0.22-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

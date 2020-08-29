@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.wrdlbrnft:sorted-list-item-manager:0.3.0.22@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6dab9104a8b8df74b255ffc12ea9eeff/jetified-sorted-list-item-manager-0.3.0.22/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6dab9104a8b8df74b255ffc12ea9eeff/jetified-sorted-list-item-manager-0.3.0.22/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6dab9104a8b8df74b255ffc12ea9eeff/jetified-sorted-list-item-manager-0.3.0.22/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.wrdlbrnft/sorted-list-item-manager/0.3.0.22/f956dbbaf061b04c21c4c41dbc9e7fdf98296416/sorted-list-item-manager-0.3.0.22-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
