@@ -4,7 +4,7 @@
     android:id="@+id/lau"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@drawable/dashboard_bg"
     tools:context=".MainActivity">
 
 
@@ -14,7 +14,37 @@
         android:layout_height="100dp"
         android:layout_weight="1"
         android:src="@drawable/img_logo"
+
+
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <DigitalClock
+        android:id="@+id/simpleDigitalClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="20dp"
+        android:layout_weight="1"
+        android:focusable="true"
+        android:background="@null"
+        android:nextFocusDown="@id/btn_library"
+        android:stateListAnimator="@animator/animator_main_menu_card"
+        android:src="@drawable/ic_settings_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
@@ -33,6 +63,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
+
             android:id="@+id/btn_tv"
             android:layout_width="150dp"
             android:layout_height="300dp"
@@ -40,11 +71,11 @@
             android:layout_marginTop="100dp"
             android:layout_marginRight="4dp"
             android:layout_marginBottom="100dp"
-            android:background="@drawable/coner_button"
+            android:background="@drawable/tv_button"
             android:focusable="true"
             android:stateListAnimator="@animator/animator_main_menu_card"
-            android:text="@string/waharaka_tv"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:nextFocusUp="@id/imageButton"/>
 
         <Button
             android:id="@+id/btn_radio"
@@ -52,12 +83,11 @@
             android:layout_height="300dp"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
-            android:background="@drawable/coner_button"
+            android:background="@drawable/radio_button"
             android:focusable="true"
             android:stateListAnimator="@animator/animator_main_menu_card"
-            android:text="@string/waharaka_radio"
             android:textColor="#FFFFFF"
-            tools:text="@string/waharaka_radio" />
+            android:nextFocusUp="@id/imageButton"/>
 
         <Button
             android:id="@+id/btn_deshana"
@@ -66,11 +96,11 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
-            android:background="@drawable/coner_button"
+            android:background="@drawable/deshana_button"
             android:focusable="true"
             android:stateListAnimator="@animator/animator_main_menu_card"
-            android:text="Deshana"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:nextFocusUp="@id/imageButton"/>
 
         <Button
             android:id="@+id/btn_karmasthana"
@@ -79,11 +109,11 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
-            android:background="@drawable/coner_button"
+            android:background="@drawable/karmasthana_button"
             android:focusable="true"
             android:stateListAnimator="@animator/animator_main_menu_card"
-            android:text="Karmasthana"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:nextFocusUp="@id/imageButton"/>
 
         <Button
             android:id="@+id/btn_library"
@@ -92,11 +122,12 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="100dp"
             android:layout_weight="1"
-            android:background="@drawable/coner_button"
+            android:background="@drawable/pusthaka_button"
             android:focusable="true"
             android:stateListAnimator="@animator/animator_main_menu_card"
-            android:text="Library"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:nextFocusForward="@id/imageButton"
+            android:nextFocusUp="@id/imageButton"/>
 
     </LinearLayout>
 

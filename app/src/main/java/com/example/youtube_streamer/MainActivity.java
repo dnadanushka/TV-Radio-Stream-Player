@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ public class MainActivity extends Activity {
     private Button buttonRadio;
     private Button buttonDeshana;
     private Button buttonKarmasthana;
+    private ImageButton buttonSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,8 @@ public class MainActivity extends Activity {
         buttonRadio = findViewById(R.id.btn_radio);
         buttonDeshana = findViewById(R.id.btn_deshana);
         buttonKarmasthana = findViewById(R.id.btn_karmasthana);
-
+        buttonSettings = findViewById(R.id.imageButton);
+        buttonTV.requestFocus();
         buttonTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -37,6 +40,12 @@ public class MainActivity extends Activity {
             }
         });
 
+        buttonSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
+            }
+        });
         buttonRadio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
