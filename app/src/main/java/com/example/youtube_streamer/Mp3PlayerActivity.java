@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -53,7 +56,7 @@ public class Mp3PlayerActivity extends AppCompatActivity {
     String title;
 
     ImageView buttonPlay;
-    TextView txtTitle;
+
     MediaPlayer mediaPlayer;
     SeekBar seekBar;
     TextView txtProgress;
@@ -61,17 +64,19 @@ public class Mp3PlayerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_mp3_player);
+
         filename = getIntent().getStringExtra("FILENAME");
         title = getIntent().getStringExtra("TITLE");
         ImageView buttonPlay = (ImageView) findViewById(R.id.btnPlay);
-        TextView txtTitle = (TextView) findViewById(R.id.txt_karmasthana_name);
+
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         txtProgress = (TextView) findViewById(R.id.txt_progress);
         txtProgress.setTextColor(getResources().getColor(R.color.grey));
         seekBar.setBackgroundColor(getResources().getColor(R.color.grey));
         seekHandler = new Handler();
-        txtTitle.setText(title);
+
         //        String filePath = Environment.getExternalStorageDirectory()+
         //                "/New Folder/ztz_3_adding.mp3";
         //        String filePath = "/storage/emulated/0/New Folder/ztz_3_adding.mp3";
@@ -112,10 +117,10 @@ public class Mp3PlayerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(mediaPlayer.isPlaying()){
-                    buttonPlay.setImageResource(R.drawable.ic_play);
+                    buttonPlay.setImageResource(R.drawable.ic_white_play);
                     mediaPlayer.pause();
                 }else{
-                    buttonPlay.setImageResource(R.drawable.ic_pause);
+                    buttonPlay.setImageResource(R.drawable.ic_white_pause);
                     mediaPlayer.start();
                 }
 
@@ -124,6 +129,19 @@ public class Mp3PlayerActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        try {
+            View view = getWindow().getDecorView();
+            WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) view.getLayoutParams();
+            layoutParams.gravity = Gravity.BOTTOM;
+            getWindowManager().updateViewLayout(view, layoutParams);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

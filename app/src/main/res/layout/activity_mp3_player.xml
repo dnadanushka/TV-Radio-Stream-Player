@@ -1,102 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="50dp"
     tools:context=".Mp3PlayerActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/app_name"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bg" />
-
-
-    </RelativeLayout>
 
     <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="#CC000000" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
         android:gravity="center">
-
-        <ImageView
-            android:id="@+id/stationLogo"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
-            android:contentDescription="@string/image_content_description"
-            android:src="@drawable/ic_logo" />
-
-        <TextView
-            android:id="@+id/txt_karmasthana_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/stationLogo"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="@string/karmasthana"
-            android:textColor="@android:color/white"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/radioStationNowPlaying"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_karmasthana_name"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:text="@string/app_slogan"
-            android:textColor="@android:color/white"
-            android:textSize="14sp" />
 
         <ImageView
             android:id="@+id/btnPlay"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_below="@id/radioStationNowPlaying"
+            android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="389dp"
             android:contentDescription="@string/image_content_description"
             android:focusable="true"
             android:onClick="playStop"
-            android:src="@drawable/ic_play" />
+            android:src="@drawable/ic_white_pause"
+            app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/seekBar" />
+
+        <ImageView
+            android:id="@+id/btnPlay2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:contentDescription="@string/image_content_description"
+            android:focusable="true"
+            android:onClick="playStop"
+            android:src="@drawable/ic_white_backward"
+            app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+            app:layout_constraintStart_toEndOf="@+id/btnPlay"
+            app:layout_constraintTop_toTopOf="@+id/seekBar" />
+
+        <ImageView
+            android:id="@+id/btnPlay3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:contentDescription="@string/image_content_description"
+            android:focusable="true"
+            android:onClick="playStop"
+            android:src="@drawable/ic_white_forward"
+            app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+            app:layout_constraintStart_toEndOf="@+id/btnPlay2"
+            app:layout_constraintTop_toTopOf="@+id/seekBar" />
 
         <SeekBar
             android:id="@+id/seekBar"
-            android:layout_width="match_parent"
+            style="@android:style/Widget.Material.SeekBar"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_above="@+id/txt_progress"
-            android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="16dp"
+
+
+            android:layout_toEndOf="@+id/btnPlay"
+            android:background="@android:color/background_dark"
+            android:backgroundTint="#000000"
+            android:progressBackgroundTint="@color/grey"
+            android:progressTint="#FFFFFF"
+            android:thumbTint="@color/cardview_light_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txt_progress"
+            app:layout_constraintStart_toEndOf="@+id/btnPlay3"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txt_progress"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="19dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="20dp"
-            android:text="TextView" />
-    </RelativeLayout>
+            android:layout_marginEnd="8dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>

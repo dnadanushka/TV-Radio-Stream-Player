@@ -26,17 +26,18 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="@{`#` + model.getRank()}"
-            android:textColor="@android:color/black"
-            android:textSize="22sp"/>
+            android:textColor="@android:color/darker_gray"
+            android:textSize="22sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:textSize="16sp"
-            android:text="@{model.word}"/>
+            android:padding="8dp"
+            android:text="@{model.word}"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="16sp" />
 
     </LinearLayout>
 

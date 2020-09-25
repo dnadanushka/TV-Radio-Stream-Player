@@ -1,52 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/dashboard_bg"
     tools:context=".RadioPlayer">
 
-    <RelativeLayout
+
+    <TextView
+        android:id="@+id/radioStationName"
+        android:layout_width="246dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/waharaka_radio"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <DigitalClock
+        android:id="@+id/simpleDigitalClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_radio_settings"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_radio_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="20dp"
+        android:layout_weight="1"
+        android:focusable="true"
+        android:background="@null"
+        android:nextFocusDown="@id/playStopBtn"
+        android:stateListAnimator="@animator/animator_main_menu_card"
+        android:src="@drawable/ic_settings_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/app_name"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bg" />
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#CC000000" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/radio_background"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/stationLogo"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_centerHorizontal="true"
+            android:layout_width="272dp"
+            android:layout_height="218dp"
+            android:layout_marginStart="-20dp"
             android:contentDescription="@string/image_content_description"
-            android:src="@drawable/ic_logo" />
-
-        <TextView
-            android:id="@+id/radioStationName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/stationLogo"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="@string/waharaka_radio"
-            android:textColor="@android:color/white"
-            android:textSize="24sp" />
+            android:src="@drawable/img_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/radioStationNowPlaying"
@@ -54,20 +77,119 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/radioStationName"
             android:layout_centerInParent="true"
-            android:layout_marginBottom="10dp"
             android:gravity="center"
             android:text="@string/app_slogan"
             android:textColor="@android:color/white"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/middle_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/radio_backgroud_inside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stationLogo">
+
+            <ImageView
+                android:id="@+id/stationLogo2"
+                android:layout_width="173dp"
+                android:layout_height="169dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/image_content_description"
+                android:src="@drawable/deshana_cover"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioStationName2" />
+
+            <ImageView
+                android:id="@+id/playStopBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/image_content_description"
+                android:onClick="playStop"
+                android:focusable="true"
+                android:nextFocusUp="@id/btn_radio_settings"
+                android:nextFocusDown="@id/btn_radio_back"
+                android:nextFocusRight="@id/btn_radio_back"
+                android:src="@drawable/ic_play"
+                android:stateListAnimator="@animator/animator_main_menu_card"
+                app:layout_constraintBottom_toTopOf="@id/radioStationName3"
+                app:layout_constraintStart_toEndOf="@+id/stationLogo2" />
+
+            <TextView
+                android:id="@+id/radioStationName2"
+                android:layout_width="246dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="monospace"
+                android:text="NOW PLAYING"
+                android:textAppearance="@style/TextAppearance.Compat.Notification.Line2"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/stationLogo2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/radioStationName3"
+                android:layout_width="504dp"
+                android:layout_height="24dp"
+
+                android:layout_marginStart="8dp"
+                android:text="පූජ්‍ය පාද වහරක අභයරත්නාකංකාර හිමිපාණන් වහන්සේ"
+                android:textAppearance="@style/TextAppearance.Compat.Notification.Line2"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/stationLogo2"
+                app:layout_constraintStart_toEndOf="@+id/stationLogo2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
-            android:id="@+id/playStopBtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_below="@id/radioStationNowPlaying"
-            android:layout_centerHorizontal="true"
-            android:contentDescription="@string/image_content_description"
-            android:onClick="playStop"
-            android:src="@drawable/ic_play" />
-    </RelativeLayout>
-</RelativeLayout>
+            android:id="@+id/imageView2"
+            android:layout_width="49dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_online"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="ONLINE"
+            android:textColor="@color/cardview_light_background"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/btn_radio_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:scaleType="centerCrop"
+        android:focusable="true"
+        android:background="@null"
+        android:src="@drawable/btn_back"
+        android:stateListAnimator="@animator/animator_main_menu_card"
+        android:nextFocusUp="@id/playStopBtn"
+        android:nextFocusLeft="@id/playStopBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -111,6 +111,7 @@ public class KarmasthanaActivity extends AppCompatActivity implements SearchView
 
         final MenuItem searchItem = menu.findItem(R.id.action_search);
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        searchView.setNextFocusDownId(R.id.recycler_view);
 
         searchView.setOnQueryTextListener(this);
 searchItem.expandActionView();

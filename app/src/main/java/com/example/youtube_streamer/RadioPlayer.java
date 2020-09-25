@@ -18,6 +18,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,13 +38,35 @@ public class RadioPlayer extends Activity {
     private ImageView playStop;
     private BroadcastReceiver broadcastReceiver;
     private String nowPlayingData = "";
+    private ImageButton btnback;
+    private ImageButton buttonSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_radio_player);
         playStop = findViewById(R.id.playStopBtn);
+        btnback = findViewById(R.id.btn_radio_back);
         nowPlaying = findViewById(R.id.radioStationNowPlaying);
+        buttonSettings = findViewById(R.id.btn_radio_settings);
+        playStop.requestFocus();
+
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stop();
+                Intent intent = new Intent(RadioPlayer.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
+            }
+        });
+
         setIsPlaying(false);
         processPhoneListenerPermission();
         broadcastReceiver = new BroadcastReceiver() {
