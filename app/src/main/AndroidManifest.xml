@@ -20,9 +20,16 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".KarmasthanaActivity" android:windowSoftInputMode="adjustNothing"></activity>
-        <activity android:name=".Mp3PlayerActivity" android:theme="@style/AppDialogTheme"/>
-        <activity android:name=".DeshanaActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name=".Categories_activity"></activity>
+        <activity
+            android:name=".KarmasthanaActivity"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".Mp3PlayerActivity"
+            android:theme="@style/AppDialogTheme" />
+        <activity
+            android:name=".DeshanaActivity"
+            android:windowSoftInputMode="adjustNothing" />
         <activity android:name=".RadioPlayer" />
 
         <service android:name=".RadioService" />

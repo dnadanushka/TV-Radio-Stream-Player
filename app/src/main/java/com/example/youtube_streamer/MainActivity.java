@@ -59,7 +59,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(MainActivity.this, DeshanaActivity.class);
+                Intent intent = new Intent(MainActivity.this, Categories_activity.class);
                 startActivity(intent);
             }
         });
